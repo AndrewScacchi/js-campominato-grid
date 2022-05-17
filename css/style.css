@@ -5,14 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Utility classes */
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 
 /* MAIN styles */
 .container {
@@ -21,7 +13,6 @@
     
     flex-direction: column;
     justify-content: flex-start;
-
 }
 .difficulty {
     justify-content: center;
@@ -29,6 +20,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
+    margin: 15px;
     width: 100%;
     text-align: center;
 }
@@ -46,40 +38,63 @@ h1 {
     transform: scale(105%);
     cursor: pointer;
 }
-.selected{
-    transform: scale(105%);
-    background-color: blue;
-    color: white;
-}
 
 .grid {
     width: 30%;
-    min-height: fit-content;
+    /* min-height: fit-content; */
     margin: 0 auto;
     border: 5px solid red;
-
     flex-direction: row;
-
+    justify-content:center ;
 }
 
 /* CELLS styles */
 .cell{
     content: "";
-    background-color: white;
     border: 1px solid black;
-    width:10%;
+    text-align: center;
+    padding: 0.6em 0.5em;
+    line-height: 100%;
 }
+
+/* 
+    i wanted to make the element perfect square but i would
+    have to add a absolute dinamic element on top...
+    too much work
+ */
+/* 
 .cell:after {
     content: "";
     display: block;
-    padding-bottom: 100%;
+    padding-bottom: 50%;
+}
+ */
+.cell:hover{
+    cursor: pointer;
+    background-color: beige;
+}
+.cell.selected:hover{
+    cursor:pointer;
+    background-color: blue;
 }
 .cell-easy {
     width: 10%;
 }
 .cell-normal{
-    width: 11;
+    width: calc(100% / 9 );
 }
 .cell-hard {
-    width: 14.25;
+    width: calc(100% / 7);
+}
+
+/* utility classes */
+
+.selected{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
 }
